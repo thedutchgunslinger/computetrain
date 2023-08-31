@@ -149,3 +149,8 @@ function handleClick(){
       dropContainer.appendChild(element);
     }
 }
+
+
+export function test(){
+    console.log("test");
+}

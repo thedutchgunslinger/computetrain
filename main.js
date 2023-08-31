@@ -270,3 +270,5 @@ let myArr1 = [1, 2, 3, 4, 5];
 for(let item in myArr1){
     console.log(item);
 }
+
+

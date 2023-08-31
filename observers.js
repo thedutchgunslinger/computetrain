@@ -37,3 +37,5 @@ const lazyLoadObserver = new IntersectionObserver((entries) => {
 })
 
 lazyLoadObserver.observe(document.querySelector(".card:last-of-type"));
+
+

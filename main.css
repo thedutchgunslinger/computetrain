@@ -94,3 +94,37 @@
     visibility: visible;
     margin-left: 0px;
   }
+
+
+  #dialog {
+    position: relative;
+
+  }
+
+  #dialog > #closeDialog {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+    border: none;
+    background-color: darkslategray;
+    border-radius: 25%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .5rem;
+  }
+
+  #dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #wrapper {
+    display: flex;
+    height: 200px;
+  }
+
+  #wrapper #box {
+    background-color: red;
+    width: 50%;
+  }

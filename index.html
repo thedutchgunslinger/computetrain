@@ -1,16 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <script src="main.js" defer></script> -->
     <!-- <script src="dragAndDrop.js" defer></script> -->
-    <script src="observers.js" defer></script>
-    <link rel="stylesheet" href="main.css">
+    <!-- <script src="main.js" defer></script> -->
+
+    <script type="importmap">
+      {
+        "imports": {
+          "axios": "https://cdn.jsdelivr.net/npm/@bundled-es-modules/axios@0.27.2/axios.min.js",
+          "person": "./classes/person.class.js",
+          "school": "./classes/school.class.js",
+          "student": "./classes/student.class.js",
+          "teacher": "./classes/teacher.class.js",
+          "utils": "./classes/classes.map.js"
+        }
+      }
+    </script>
+    <script src="dag2.js" type="module" defer></script>
+    <script src="dag3.js" type="module" defer></script>
+    <script src="timeline.js" defer></script>
+    <link rel="stylesheet" href="main.css" />
     <!-- <script src="https://assets.nbeij.nl/functions/utils/getRandomHexColor.js"></script> -->
-</head>
-<body>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #181818;
+      }
+
+      time-line {
+        color: white;
+      }
+
+      time-line::part(h2) {
+        color: #2e388e;
+      }
+
+      
+
+    </style>
+  </head>
+  <body>
+
+    <p id="click">dit is een click event test</p>
+
+    <first-element color="rgba(255,255,255,0.5)">
+        <h1>test</h1>
+        <p slot="secondSlot">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+    </first-element>
+
+    <slot-test>
+
+        <div slot="slot5"> test tes test</div>
+    </slot-test>
+
+    <time-line
+      timeline-start="2003"
+      timeline-end="2026"
+      timeline-start-text="Past"
+      timeline-end-text="Future"
+      step-size="1"
+      step-height="50"
+      timeline-color="white"
+    >
+      <div step="2004">
+        <h2 part="h2">An idea formed</h2>
+        <p>while doing some work we had this amazing idea!</p>
+      </div>
+
+      <div step="2007"> test</div>
+
+      <div step="2004" side="right">
+        <h2 part="h2">The first steps</h2>
+        <p>We started working on the idea!</p>
+        <img src="https://picsum.photos/200" alt="">
+      </div>
+
+      <div step="2005" side="right">
+        <h2 part="h2">First Tests</h2>
+        <p>The first tests had been started!</p>
+      </div>
+
+      <div step="2009">
+        <h2 part="h2">First prototype</h2>
+        <p>The first prototype had been made!</p>
+      </div>
+
+      <div step="2012" side="right">
+        <h2 part="h2">Mass production starts</h2>
+        <p>The first batch started rolling of the press!</p>
+      </div>
+
+      <div step="2013">
+        <h2 part="h2">V1 Releases</h2>
+        <p>The first sales had been made!</p>
+      </div>
+
+      <div step="2017" side="right">
+        <h2 part="h2">V2 Releases</h2>
+        <p>The second version had been released!</p>
+      </div>
+
+      <div step="2022">
+        <h2 part="h2">V3 Releases</h2>
+        <p>The third version had been released!</p>
+      </div>
+
+      <div step="2025" side="right">
+        <h2 part="h2">V4 Releases (hopefully)</h2>
+        <p>The fourth version releases!</p>
+      </div>
+    </time-line>
+    <!-- <timeline-component></timeline-component> -->
     <!-- <p>Lorem ipsum dolor sit amet.</p>
     <h1>Lorem ipsum dolor sit amet consectetur.</h1> -->
     <!-- <div id="dropzone">
@@ -28,7 +134,6 @@
     <div id="fillContainer">
         <div id="fill" draggable="true"></div>
     </div> -->
-
 
     <!-- <div id="dropzoneY">
         <div class="itemY"></div>
@@ -49,7 +154,7 @@
 
     </div> -->
 
-    <div id="cardContainer">
+    <!-- <div id="cardContainer">
         <div class="card">item</div>
         <div class="card">item</div>
         <div class="card">item</div>
@@ -90,7 +195,17 @@
         <div class="card">item</div>
         <div class="card">item</div>
         <div class="card">Last Item</div>
-    </div>
-
-</body>
+    </div> -->
+    <!-- <button id="openDialog">open dialog</button>
+    <dialog id="dialog">
+        <button id="closeDialog">X</button>
+        <h2>Lorem, ipsum.</h2>
+        <img src="https://picsum.photos/200" alt="">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore ab quisquam impedit magni. Veniam, animi!</p>
+    </dialog>
+    <div id="wrapper">
+        <div id="box"></div>
+        <div id="text" contenteditable="true">test</div>
+    </div> -->
+  </body>
 </html>
